@@ -52,7 +52,7 @@ function Nav() {
               style={{ position: "relative" }}
             >
               <p
-                onMouseOver={toggleMenu}
+                onClick={toggleMenu}
                 style={{ cursor: "pointer", margin: 0 }}
               >
                 {" "}

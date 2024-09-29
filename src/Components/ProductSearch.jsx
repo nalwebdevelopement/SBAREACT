@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Nav.css'
 
-function ProductSearch(category) {
+function ProductSearch({category}) {
+  console.log(`Fetching products for category: ${category}`);
   const [products, setProducts] = useState([]);
 
   const [cart, setCart] = useState([]);
@@ -16,8 +17,11 @@ function ProductSearch(category) {
 
   useEffect(() => {
     fetch(`https://world.openfoodfacts.org/cgi/search.pl?search_terms=${category}&search_simple=1&action=process&json=1`)
+    // fetch(`https://world.openfoodfacts.org/cgi/search.pl?search_terms=Vegetable&search_simple=1&action=process&json=1`)
       .then(response => response.json())
+      
       .then(data => {
+        console.log('Raw data from API:', data);
         const productsWithPrice = data.products.map(product => ({
           ...product,
           price: generateRandomPrice(1, 20), // Generate random price between $1 and $20
