@@ -1,0 +1,24 @@
+.dropdown-list
+{
+  margin-top:20px;
+  background-color: red;
+  width:200px;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    background-color: #315327;
+}
+.dropdown
+{
+  background-color: blue;
+}
+.dropdown-list li
+{
+padding: 8px 12px;
+cursor: pointer;
+color: #cdd18c;
+}
+.dropdown-list li:hover {
+  background-color: #55582e;
+}

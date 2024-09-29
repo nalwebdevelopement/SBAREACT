@@ -2,8 +2,15 @@ import React from "react";
 import "./Nav.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import Dropdown from "./Dropdown";
 
 function Nav() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <div>
       <div className="topbar">
@@ -40,7 +47,19 @@ function Nav() {
               alt="img-main"
               style={{ width: "100px", height: "100px", borderRadius: "50%" }}
             />
-            <p> Shop</p>
+            <div
+              className="dropdown-container"
+              style={{ position: "relative" }}
+            >
+              <p
+                onMouseOver={toggleMenu}
+                style={{ cursor: "pointer", margin: 0 }}
+              >
+                {" "}
+                Shop
+              </p>
+              {isMenuOpen && <Dropdown />}{" "}
+            </div>
             <p> Receipes</p>
             <p> Weekly Ad</p>
             <p> Savings</p>
