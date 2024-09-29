@@ -25,16 +25,16 @@ function Nav() {
               <FontAwesomeIcon icon={faHouse} />
             </span>
           </div>
-          <div class="search-bar">
+          <div className="search-bar">
             <input type="text" placeholder="Search" id="search" />
             <button>
               <i class="fas fa-search"></i>
             </button>
           </div>
-          <div class="right-options">
+          <div className="right-options">
             <span>Select a pickup time</span>
 
-            <i class="fas fa-shopping-cart"></i>
+            <i className="fas fa-shopping-cart"></i>
           </div>
         </navbar>
       </div>
